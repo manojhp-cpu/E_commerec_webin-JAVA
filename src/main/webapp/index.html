@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Responsive Navbar with Bootstrap</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  <style>
+    /* Logo Styles */
+    .logo {
+      max-width: 150px;
+      height: auto;
+    }
+
+    /* Navbar Styles */
+    .navbar {
+      background-color: #333; /* Dark background */
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+
+    .navbar-brand,
+    .navbar-nav .nav-link {
+      color: #fff; /* White text */
+    }
+
+    .navbar-brand:hover,
+    .navbar-nav .nav-link:hover {
+      color: #ccc; /* Light grey on hover */
+    }
+
+    .navbar-toggler {
+      border-color: #fff; /* White border color */
+    }
+
+    .navbar-toggler-icon {
+      background-color: #fff; /* White color */
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="l3.png" alt="Your Logo" class="logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Product.html">Admin</a>
+        </li>
+        
+        <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" href="Login.html">Buyer</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="signup2.html">Signup</a>
+          </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Bootstrap JS and jQuery (optional) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
