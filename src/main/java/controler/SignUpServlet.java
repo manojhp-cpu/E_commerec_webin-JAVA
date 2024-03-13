@@ -42,6 +42,8 @@ public class SignUpServlet extends HttpServlet {
       int result = dao.registerBuyer(buyer);
       if (result > 0) {
          System.out.println("Registration is successful");
+         RequestDispatcher rd = request.getRequestDispatcher("Login.html");
+		   rd.forward(request, response);
          
       } else {
          System.out.println("Registration failed");

@@ -2,8 +2,10 @@ package controler;
 
 import java.io.IOException;
 
+
 import java.sql.SQLException;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -33,16 +35,19 @@ public class LoginServlet extends HttpServlet {
         
         Buyer buyer = buyerDAO.buyerVerify(name, password);
 		
-		if (buyer != null) {
+		if (name.equals("admin")&& password.equals("admin")) {
 		    // Credentials are valid
 		    // Print welcome message to console
-		    System.out.println("Welcome, " + buyer.getName() + "!");
+		    RequestDispatcher rd = request.getRequestDispatcher("admin_home.jsp");
+		    rd.forward(request, response);
 		    
 		    // Redirect the user to the dashboard or another page
 		} else {
 		    // Credentials are invalid
 		    // Display an error message
-			System.out.println("Invalid email or password");
+			RequestDispatcher rd = request.getRequestDispatcher("buyer_home.jsp");
+			rd.forward(request, response);
+			
 		}
     }
 }

@@ -7,6 +7,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class BuyerDAO {
    private Connection conn = null;
@@ -74,7 +75,27 @@ public class BuyerDAO {
 	
 	
    }
-   
+   public ArrayList<Buyer> getBuyers() throws SQLException
+	{
+		String query="select * from buyer";
+		Connection con=DBConnector.getConnection();
+		PreparedStatement statement=con.prepareStatement(query);
+		ResultSet rs=statement.executeQuery();
+		ArrayList<Buyer> buyerList=new ArrayList<Buyer>();
+		while (rs.next())
+		{
+			Buyer buyer=new Buyer();
+			buyer.setName(rs.getString("name"));
+			buyer.setMail(rs.getString("email"));
+			buyer.setMobile(rs.getString("mobile"));
+			buyer.setId(rs.getInt("id"));
+			buyerList.add(buyer);
+		}
+		statement.close();
+		DBConnector.closeConnection(con);
+		return buyerList;
+	}
 }
+   
    
 
